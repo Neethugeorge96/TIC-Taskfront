@@ -1,0 +1,31 @@
+
+
+.input-field {
+    padding-left: 20%;
+    /* width:100%; */
+    outline: none;
+}
+
+.icons{
+    position: absolute;
+    background-color: #e6ecac;
+    padding: 4px;
+    margin-top: 1px;
+    margin-left: 1px;
+
+}
+.loginbtn
+{
+    margin-left: 40%;
+    background-color: black;
+    color: white;
+    outline:none;
+    border-radius: 5px;
+}
+
+span{
+    color:red;
+}
+p{
+    font-size: 12px;
+}

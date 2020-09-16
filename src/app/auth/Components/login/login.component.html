@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-9">
+            <img src="assets\images\login.jpg" style="width: 100%;">
+        </div>
+           
+        <div class="col-sm-12 col-md-3 ">
+            <div class="container mt-5 d-flex justify-content-center">
+                <div class="login">
+                    <h4>Login</h4>
+                    <form [formGroup]="loginForm" novalidate>
+                       <div class="input-form mt-4">
+                        <div class="icons">
+                            <img src="assets\images\user.png">
+                        </div>
+                        <input type="text" class=" input-field py-1" formControlName="email" placeholder="UserName" required>
+                       </div>
+                       <div class="input-form mt-4">
+                        <div class="icons">
+                            <img src="assets\images\password.png">
+                        </div>
+                        <input type="password" class=" input-field py-1" formControlName="password" placeholder="Password" required>
+                       </div>
+                       <p class="mt-4">Forgot password? &nbsp; &nbsp;<span>Click Here</span></p>
+                       <div class="buttoncls mt-5">
+                           <button class="loginbtn mt-5 px-5 py-1" (click)="submit()" >Login</button>
+                       </div>
+                    </form>
+                    
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>
+

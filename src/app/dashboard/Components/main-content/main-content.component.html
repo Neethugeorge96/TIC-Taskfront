@@ -1,0 +1,102 @@
+<!-- <nav class="navbar navbar-expand-lgnavbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav> -->
+<div class="tablecontent border mt-5 shadow-lg p-3 mb-5 bg-white rounded">
+  <button class=" btn " (click)="addemployee()" data-toggle="modal" data-target="#myModal" style="border-radius: 5px;outline: none; margin-left: 91%; background-color: cornflowerblue;">Add employee</button>
+  <table class="table  table-hover  mt-5">
+    <thead>
+      <tr class="table-secondary mt-3">
+        <th scope="col">#</th>
+        <th scope="col">empcode</th>
+        <th scope="col">empname</th>
+        <th scope="col">email</th>
+        <th scope="col">Department</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of employeeDetails;let i = index">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{item.empId}}</td>
+        <td>{{item.empName}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.department}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- Trigger the modal with a button -->
+<!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+        <h5 class="modal-title">Employee Details</h5>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form  [formGroup]="registerfrm" *ngIf="registerfrm" novalidate>
+
+            <div class="row">
+              <div class="col-sm-6 col-md-6">
+                <input type="text" class=" mt-2 input-field py-1" formControlName="empId" placeholder="Empcode" required>               
+              </div>
+              <div class="col-sm-6 col-md-6">
+                <input type="text" class=" mt-2 input-field py-1" formControlName="empName" placeholder="Name" required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6 col-md-6">
+                <input type="text" class=" mt-2 input-field py-1" formControlName="email" placeholder="Email" required>
+              </div>
+              <div class="col-sm-6 col-md-6">
+                <input type="text" class=" mt-2 input-field py-1" formControlName="password" placeholder="password" required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6 col-md-6">
+                <input type="text" class=" mt-2 input-field py-1" formControlName="department" placeholder="Department" required>
+                <!-- <input type="text" class=" mt-2 input-field py-1" formControlName="con_password" placeholder="confirm password" required> -->
+              </div>
+            </div>
+              
+              <button class=" btn  mt-4"  style="border-radius: 5px;outline: none;background-color: cornflowerblue;margin-left: 69%; width: 23%;" (click)="submit()">Submit </button>
+           
+          </form>
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
+</div>
+
